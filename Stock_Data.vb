@@ -14,7 +14,7 @@ For Each ws In Worksheets
   
   
   'find last row of cells with values'
-  LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+  LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
   
   'Set initial variable for yearly Change'
   Dim Ticker_Open As Double
@@ -55,7 +55,7 @@ For Each ws In Worksheets
        Ticker = ws.Cells(i, 1).Value
 
       ' Add to the Volume Total'
-      Volume_Total = Volume_Total + Cells(i, 7).Value
+      Volume_Total = Volume_Total + ws.Cells(i, 7).Value
       
       '*find close price per Ticker'
       Ticker_Close = ws.Cells(i, 6).Value
@@ -96,7 +96,7 @@ For Each ws In Worksheets
     Else
 
       ' Add to the Brand Total
-      Volume_Total = Volume_Total + Cells(i, 7).Value
+      Volume_Total = Volume_Total + ws.Cells(i, 7).Value
 
     End If
 
